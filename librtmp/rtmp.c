@@ -1782,6 +1782,7 @@ RTMP_SendNlplayNotice(RTMP *r, AVal *nlplaypath, AVal *nltoken, AVal *nlid)
   enc = AMF_EncodeString(enc, pend, nlplaypath);
   enc = AMF_EncodeString(enc, pend, nltoken);
   enc = AMF_EncodeString(enc, pend, nlid);
+  enc = AMF_EncodeNumber(enc, pend, 0);
   packet.m_nBodySize = enc - packet.m_body;
 
   r->Link.playpath = *nlid;

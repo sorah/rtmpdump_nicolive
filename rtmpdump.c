@@ -1087,14 +1087,10 @@ main(int argc, char **argv)
 	  break;
 	case 'N':
 	  {
-	    char *tmp_nltoken;
-	    char *tmp_nlid[255];
 	    STR2AVAL(nlplaypath, strtok(optarg,","));
-	    tmp_nltoken = strtok(NULL, ",");
-	    STR2AVAL(nltoken   , tmp_nltoken);
-	    strcpy((char*)tmp_nlid, tmp_nltoken);
-	    STR2AVAL(nlid      , strtok((char*)tmp_nlid,"?"));
-            RTMP_Log(RTMP_LOGDEBUG, "nlplaypath: %s", optarg);
+	    STR2AVAL(nltoken   , strtok(NULL,","));
+	    STR2AVAL(nlid      , strtok(NULL,","));
+      RTMP_Log(RTMP_LOGDEBUG, "nlplaypath: %s", optarg);
 	  }
 	  break;
 	default:
